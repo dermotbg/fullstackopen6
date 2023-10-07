@@ -34,7 +34,7 @@ const App = () => {
             <button onClick={() => vote(anecdote.id)}>vote</button>
           </div>
         </div>
-      )}
+      ).sort((a, b )=> a.likes - b.likes)}
       <h2>create new</h2>
       <form onSubmit={addNote}> 
         <div><input name='anecdote'/></div>
