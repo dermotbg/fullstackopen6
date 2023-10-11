@@ -11,6 +11,9 @@ const App = () => {
     onSuccess:(newAnec) => {
       const anecdotes = queryClient.getQueryData(['anecdotes'])
       queryClient.setQueryData(['anecdotes'], anecdotes.concat(newAnec))
+    },
+    onError:() => {
+    notificationDispatch({ type: 'ERROR' })
     }
   })
   

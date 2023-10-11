@@ -8,6 +8,8 @@ const NotificationReducer = (state, action) => {
         case 'CREATE':
             console.log('action', action)
             return `anecdote '${action.content}' created`
+        case 'ERROR':
+            return 'anecdote too short, must be 5 or more characters'
         case 'RESET':
             return ''
         default: return state
