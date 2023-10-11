@@ -1,12 +1,18 @@
+import { useNotificationDispatch } from "../NotificationContext"
+
 /* eslint-disable react/prop-types */
 const AnecdoteForm = ({ newAnecMutation }) => {
+  const notificationDispatch = useNotificationDispatch()
 
   const onCreate = (event) => {
     event.preventDefault()
     const content = event.target.anecdote.value
     event.target.anecdote.value = ''
-    console.log('new anecdote')
     newAnecMutation.mutate({ content, votes: 0 })
+    notificationDispatch({ content, type: 'CREATE' })
+    setTimeout(() => {
+      notificationDispatch({ type: 'RESET'})
+    }, 5000)
 }
 
   return (
