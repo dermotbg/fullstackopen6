@@ -1,5 +1,4 @@
 import jsonServer from 'json-server'
-import { useNotificationDispatch } from './src/NotificationContext'
 const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
